@@ -5,6 +5,8 @@
     <script src="./jspsych/jspsych.js"></script>
     <script src="./jspsych/plugin-html-keyboard-response.js"></script>
     <script src="./jspsych/plugin-survey-text.js"></script>
+    <script src="./jspsych/plugin-survey-multi-choice.js"></script>
+    <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
     <link href="./jspsych/jspsych.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -13,7 +15,10 @@
 
   </body>
   <script>
-    const jsPsych = initJsPsych();
+  const jsPsych = initJsPsych({
+    override_safe_mode: true,
+    // on_finish: uploadData
+  });
 
     let timeline = [];
 
@@ -26,9 +31,46 @@
     const instructions = {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: 'In this experiment...',
-      post_trial_gap: 2000
+      post_trial_gap: 0
     }
     timeline.push(instructions);
+
+    // How many years of programming experience
+    // How many years of python experience
+    // How would you describe your programming skill level?
+    // How would you describe your Python skill level?
+    // survey
+    const yearsOptions = ["Less than 1", "1-2 Years", "3-5 years", "6+ years"];
+    const skillOptions = ["Beginner", "Intermediate", "Advanced", "Expert"]
+    timeline.push({
+      type: jsPsychSurveyMultiChoice,
+      questions: [
+        {
+          prompt: 'Years of programming experience?',
+          name: 'programmingYears',
+          options: yearsOptions,
+          required: true
+        },
+        {
+          prompt: 'Years of Python experience?',
+          name: 'pythonYears',
+          options: yearsOptions,
+          required: true
+        },
+        {
+          prompt: 'How would you describe your programming skill level?',
+          name: 'programmingSkill',
+          options: skillOptions,
+          required: true
+        },
+        {
+          prompt: 'How would you describe your Python skill level?',
+          name: 'pythonSkill',
+          options: skillOptions,
+          required: true
+        },
+      ]
+    })
 
     const trial = {
       type: jsPsychSurveyText,
@@ -38,7 +80,51 @@
     }
     timeline.push(trial);
 
+    const subject_id = jsPsych.randomization.randomID(10);
+const filename = `${subject_id}.csv`;
+    const save_data = {
+    type: jsPsychPipe,
+    action: "save",
+    experiment_id: "1puogTq1MKFM",
+    filename: filename,
+    data_string: ()=>jsPsych.data.get().csv()
+  };
+  timeline.push(save_data);
+  /*
+
+    timeline.push({
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: "Sending data",
+      on_finish: uploadData
+
+    })
+    */
+    
+
     jsPsych.run(timeline);
 
+
+    // // Upload to osf
+    // function uploadData(data)  {
+    //   const subjectId = jsPsych.randomization.randomID(10);
+    //   const csv = jsPsych.data.get()
+    //     // .filter()
+    //     // .ignore()
+    //     .csv()
+
+    //     console.log(csv);
+    //         fetch("https://pipe.jspsych.org/api/data/", {
+    //           method: "POST",
+    //           headers: {
+    //             "Content-Type": "application/json",
+    //             Accept: "*/*",
+    //           },
+    //           body: JSON.stringify({
+    //             experimentID: "1puogTq1MKFM",
+    //       filename: `${subjectId}.csv`,
+    //             data: csv,
+    //           }),
+    //         });
+    // }
   </script>
 </html>
