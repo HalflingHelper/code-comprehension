@@ -9,27 +9,42 @@ Random order of the programs
     - split into numbers & list type?
     - or divide based on N?
 
-Numeric:
-  Factorial
-  Sum 1..N
-  Sum odds
-  Sum powers of 2
-  Log/exponent Calculation (weird)
-  Multiplication Calculation (weird)
-  Compounding interest (with reasonable rate?)
 
-List
-  map (+ 1) / (* 2)
-  reverse
-  map-if
-  filter (even / odds)
-  cumsum (tracking an additional variable)
+Simple loop body: maps / filters / on one condition
+(More) complex loop body: Some sort of state, more conditions
+
+
 
 Programs should iterate from 1 to N and create? a list
 
 Loop bodies should be "roughly the same", and randomize which are which size between subjects
 
 """
+
+"""
+Rejects: (RIP)
+
+countEqual
+countBetween
+length
+listMax
+listMin
+firstElement
+lastElement
+countIndexMod
+countMax
+countMin
+countGreaterIndex
+"""
+
+
+# I'm going to have 4 programs of each type - just slightly diff
+
+# 4 sets where I assign randomly 1, 5, 10, 20 to each  of the 4 in each type
+# Then shuffle the presentation order of the types
+
+
+# 5 * 4 = 20 * 4 trials is 80
 
 # MCQ with good distractors:
     # Off by one
@@ -98,6 +113,41 @@ while i < len(ls):
     i = i + 1
 
 print(a)
+
+[9, 1, 3, 2, 4]
+
+a = 0
+i = 0
+while i < len(ls):
+    if ls[i] % 2 == i % 2:
+        a = a + 1
+    i = i + 1
+
+# Same as above, but with an extra variable
+a = 0
+b = 0
+i = 0
+while i < len(ls):
+    if ls[i] % 2 == b:
+        a = a + 1
+    b = (b + 1) % 2
+    i = i + 1
+
+
+# This is interesting and maybe more difficult
+# I think this is inductable
+
+a = 0
+i = 0
+while i < len(ls):
+    if ls[i] > a:
+        a = a + 1
+    else:
+        a = a - 1
+    i = i + 1
+
+print(a)
+
 
 # sums? 
 
