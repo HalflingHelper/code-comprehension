@@ -8,6 +8,7 @@
     <script src="./jspsych/plugin-survey-multi-choice.js"></script>
     <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
     <link href="./jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+    <link href="./style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
 
@@ -35,14 +36,11 @@
     }
     timeline.push(instructions);
 
-    // How many years of programming experience
-    // How many years of python experience
-    // How would you describe your programming skill level?
-    // How would you describe your Python skill level?
+
     // survey
     const yearsOptions = ["Less than 1", "1-2 Years", "3-5 years", "6+ years"];
     const skillOptions = ["Beginner", "Intermediate", "Advanced", "Expert"]
-    timeline.push({
+    const questionnaire = {
       type: jsPsychSurveyMultiChoice,
       questions: [
         {
@@ -70,61 +68,73 @@
           required: true
         },
       ]
+    }
+
+    // timeline.push(questionnaire)
+
+
+    // TODO: Somehow generate this from some code templates (i.e. what is the list that is used could change...)
+    var tests = [
+      { code: `x = 5\n\tprint(x)` },
+      { code: 'print("hello, world")' },
+    ]
+
+    // Do the wrappingo here
+    var test_stimuli = tests.map(t => {
+      return {
+        code: '<div class="code-block">'+t.code + '</div>'
+      }
     })
 
-    const trial = {
+
+
+
+    var test = {
       type: jsPsychSurveyText,
+      // TODO: Make this monospaced and whatever
+      preamble: jsPsych.timelineVariable('code'),
+      // preamble: () => {
+      //   let n = jsPsych.timelineVariable('code')
+      //   return `<code>` + jsPsych.timelineVariable('code') + `</code>`
+      // },
       questions: [
-        {prompt: 'How <em>old</em> are you?'}
-      ]
+        { prompt: 'What does the above code output?' }
+      ],
+      post_trial_gap: 1000,
     }
-    timeline.push(trial);
+
+    var test_procedure = {
+      timeline: [test],
+      timeline_variables: test_stimuli,
+      // randomize_order: true,
+      // repetitions: 5
+    };
+    timeline.push(test_procedure);
+
 
     const subject_id = jsPsych.randomization.randomID(10);
-const filename = `${subject_id}.csv`;
+    const filename = `${subject_id}.csv`;
+
     const save_data = {
-    type: jsPsychPipe,
-    action: "save",
-    experiment_id: "1puogTq1MKFM",
-    filename: filename,
-    data_string: ()=>jsPsych.data.get().csv()
-  };
-  timeline.push(save_data);
-  /*
+      type: jsPsychPipe,
+      action: "save",
+      experiment_id: "1puogTq1MKFM",
+      filename: filename,
+      data_string: ()=>jsPsych.data.get().csv()
+    };
+    timeline.push(save_data);
+
 
     timeline.push({
       type: jsPsychHtmlKeyboardResponse,
-      stimulus: "Sending data",
-      on_finish: uploadData
-
+      stimulus: `
+          <div style="text-align:center; line-height:1.6;">
+            <p>You're done! Thank you for participating.</p>
+            <p>Your data has been automatically sent to OSF. You can visit your data at https://osf.io/2uznt/files</p>
+            <p class="dim">Press any key to finish.</p>
+          </div>`,
     })
-    */
-    
 
     jsPsych.run(timeline);
-
-
-    // // Upload to osf
-    // function uploadData(data)  {
-    //   const subjectId = jsPsych.randomization.randomID(10);
-    //   const csv = jsPsych.data.get()
-    //     // .filter()
-    //     // .ignore()
-    //     .csv()
-
-    //     console.log(csv);
-    //         fetch("https://pipe.jspsych.org/api/data/", {
-    //           method: "POST",
-    //           headers: {
-    //             "Content-Type": "application/json",
-    //             Accept: "*/*",
-    //           },
-    //           body: JSON.stringify({
-    //             experimentID: "1puogTq1MKFM",
-    //       filename: `${subjectId}.csv`,
-    //             data: csv,
-    //           }),
-    //         });
-    // }
   </script>
 </html>
