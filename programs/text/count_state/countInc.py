@@ -4,8 +4,8 @@ i = 0
 
 while i < len(ls):
   if ls[i] > a:
-    a = ls[i]
     b = b + 1
+  a = ls[i]
   i = i + 1
 
 print(b)

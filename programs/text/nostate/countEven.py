@@ -5,3 +5,5 @@ while i < len(ls):
   if ls[i] % 2 == 0:
     a = a + 1
   i = i + 1
+
+print(a)

@@ -1,144 +1,217 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My experiment</title>
-    <script src="./jspsych/jspsych.js"></script>
-    <script src="./jspsych/plugin-html-keyboard-response.js"></script>
-    <script src="./jspsych/plugin-survey-text.js"></script>
-    <script src="./jspsych/plugin-survey-multi-choice.js"></script>
-    <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
-    <link href="./jspsych/jspsych.css" rel="stylesheet" type="text/css" />
-    <link href="./style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
+
+<head>
+  <title>My experiment</title>
+  <script src="./jspsych/jspsych.js"></script>
+  <script src="./jspsych/plugin-html-keyboard-response.js"></script>
+  <script src="./jspsych/plugin-html-button-response.js"></script>
+  <script src="./jspsych/plugin-instructions.js"></script>
+  <script src="./jspsych/plugin-survey-text.js"></script>
+  <script src="./jspsych/plugin-survey-multi-choice.js"></script>
+  <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
+  <link href="./jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+  <link href="./style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
 
 
 
-  </body>
-  <script src="./test_data.js"></script>
-  <script>
+</body>
+<script src="./test_data.js"></script>
+<script>
   const jsPsych = initJsPsych({
     override_safe_mode: true,
     // on_finish: uploadData
   });
 
-    let timeline = [];
+  let timeline = [];
 
-    const welcome = {
-      type: jsPsychHtmlKeyboardResponse,
-      stimulus: 'Welcome to the experiment! Press any key to begin.'
-    }
-    timeline.push(welcome);
+  const welcome = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: 'Welcome to the experiment! Press any key to begin.'
+  }
+  timeline.push(welcome);
 
-    const instructions = {
-      type: jsPsychHtmlKeyboardResponse,
-      stimulus: 'In this experiment...',
-      post_trial_gap: 0
-    }
-    timeline.push(instructions);
-
-
-    // survey
-    const yearsOptions = ["Less than 1", "1-2 Years", "3-5 years", "6+ years"];
-    const skillOptions = ["Beginner", "Intermediate", "Advanced", "Expert"]
-    const questionnaire = {
-      type: jsPsychSurveyMultiChoice,
-      questions: [
-        {
-          prompt: 'Years of programming experience?',
-          name: 'programmingYears',
-          options: yearsOptions,
-          required: true
-        },
-        {
-          prompt: 'Years of Python experience?',
-          name: 'pythonYears',
-          options: yearsOptions,
-          required: true
-        },
-        {
-          prompt: 'How would you describe your programming skill level?',
-          name: 'programmingSkill',
-          options: skillOptions,
-          required: true
-        },
-        {
-          prompt: 'How would you describe your Python skill level?',
-          name: 'pythonSkill',
-          options: skillOptions,
-          required: true
-        },
-      ]
-    }
-
-    // timeline.push(questionnaire)
+  const instructions = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: 'First, please answer a brief survey about your programming skills and experience.',
+    choices: ['Continue'],
+    post_trial_gap: 0
+  }
+  timeline.push(instructions);
 
 
-    // TODO: Update this to use test_data
-    // TODO: Split into blocks
-    var tests = [
-      { code: `x = 5\n\tprint(x)` },
-      { code: 'print("hello, world")' },
+  // survey
+  const yearsOptions = ["Less than 1", "1-2 Years", "3-5 years", "6+ years"];
+  const skillOptions = ["Beginner", "Intermediate", "Advanced", "Expert"]
+  const questionnaire = {
+    type: jsPsychSurveyMultiChoice,
+    questions: [
+      {
+        prompt: 'Years of programming experience?',
+        name: 'programmingYears',
+        options: yearsOptions,
+        required: true
+      },
+      {
+        prompt: 'Years of Python experience?',
+        name: 'pythonYears',
+        options: yearsOptions,
+        required: true
+      },
+      {
+        prompt: 'How would you describe your programming skill level?',
+        name: 'programmingSkill',
+        options: skillOptions,
+        required: true
+      },
+      {
+        prompt: 'How would you describe your Python skill level?',
+        name: 'pythonSkill',
+        options: skillOptions,
+        required: true
+      },
+    ],
+    data: { phase: 'response' }
+  }
+
+  timeline.push(questionnaire)
+
+    // -----------------------------
+    // Instructions (optional)
+    // -----------------------------
+    timeline.push({
+      type: jsPsychInstructions,
+      pages: [
+        `<div class='center'>
+          <h2>Task</h2>
+          <p>You will be shown a series of brief code segments.</p>
+          <p>For each of them you should determine what the code will output, and enter that value into the answer box.</p>
+          <p>Try to respond quickly and accurately.</p>
+        </div>`,
+      ],
+      show_clickable_nav: true
+    });
+
+  var test = {
+    type: jsPsychSurveyText,
+    preamble: jsPsych.timelineVariable('code'),
+    questions: [
+      { prompt: 'What does the above code output?' }
+    ],
+    post_trial_gap: 1000,
+    data: {
+      len: jsPsych.timelineVariable('len'),
+      program_name: jsPsych.timelineVariable('codeName'),
+      code_type: jsPsych.timelineVariable('codeType'),
+      correct: jsPsych.timelineVariable('ans'),
+      phase: 'response'
+    },
+    on_finish: (data) => {
+        const resp = data.response; // single key pressed
+        data.response = resp["Q0"]
+        data.correct = jsPsych.pluginAPI.compareKeys(data.response, data.correct)
+      }
+  }
+
+
+  function makeBlockProcedure(blockIndex) {
+    const mapping = [
+      [0, 1, 2, 3],
+      [1, 0, 3, 2],
+      [2, 3, 0, 1],
+      [3, 2, 1, 0]
     ]
 
-    
+    let TVs = []
+    for (let i = 0; i < tv_rows.length / 4; i++) {
+      let offset = mapping[blockIndex][i % 4]
+      TVs.push(tv_rows[i * 4 + offset])
+    }
 
-    // Do the wrappingo here
-    var test_stimuli = tests.map(t => {
-      return {
-        code: '<div class="code-block">'+t.code + '</div>'
-      }
+    // Then do the map on the TVs
+    const TVsWithBlock = TVs.map(([code, ans, len, codeName, codeType]) => {
+      code = `<div class="code-block">${code}</div>`
+      return { code, ans, len, codeName, codeType, block: blockIndex }
     })
 
 
-
-
-    var test = {
-      type: jsPsychSurveyText,
-      // TODO: Make this monospaced and whatever
-      preamble: jsPsych.timelineVariable('code'),
-      // preamble: () => {
-      //   let n = jsPsych.timelineVariable('code')
-      //   return `<code>` + jsPsych.timelineVariable('code') + `</code>`
-      // },
-      questions: [
-        { prompt: 'What does the above code output?' }
-      ],
-      post_trial_gap: 1000,
-    }
-
-    var test_procedure = {
+    return {
       timeline: [test],
-      timeline_variables: test_stimuli,
-      // randomize_order: true,
-      // repetitions: 5
-    };
-    timeline.push(test_procedure);
+      timeline_variables: TVsWithBlock,
+      randomize_order: true,
+      // sample: { type: 'without-replacement', size: 1 }, // if you want to just see a couple of trials per block
+      data: {
+        block: blockIndex
+      },
+    }
+  }
 
-
-    const subject_id = jsPsych.randomization.randomID(10);
-    const filename = `${subject_id}.csv`;
-
-    const save_data = {
-      type: jsPsychPipe,
-      action: "save",
-      experiment_id: "1puogTq1MKFM",
-      filename: filename,
-      data_string: ()=>jsPsych.data.get().csv()
-    };
-    timeline.push(save_data);
-
-
-    timeline.push({
+  function makeBlockFeedback(blockIndex) {
+    return {
       type: jsPsychHtmlKeyboardResponse,
-      stimulus: `
+      stimulus: function () {
+        // const trials = jsPsych.data.get().filter({ phase: 'choice', block: blockIndex });
+        // const n = trials.count();
+        // const correctTrials = trials.filter({ correct: true });
+        // const acc = n > 0 ? Math.round((correctTrials.count() / n) * 100) : 0;
+        // const meanRT = correctTrials.count() > 0 ? Math.round(correctTrials.select('rt').mean()) : '-';
+        // <p>Accuracy: <strong>${acc}%</strong></p>
+        // <p>Mean RT (correct only): <strong>${meanRT} ms</strong></p>
+
+        return `
+            <div class="block-summary center">
+              <h3>Block ${blockIndex} complete</h3>
+              <p class="dim">Press space to continue.</p>
+            </div>`;
+      },
+      choices: [' ']
+    };
+  }
+
+  for (let i = 0; i < 4; i++) {
+    timeline.push(makeBlockProcedure(i))
+
+    timeline.push(makeBlockFeedback(i))
+  }
+
+
+  const subject_id = jsPsych.randomization.randomID(10);
+  const filename = `${subject_id}.csv`;
+
+  const save_data = {
+    type: jsPsychPipe,
+    action: "save",
+    experiment_id: "1puogTq1MKFM",
+    filename: filename,
+    data_string: () => {
+      const csv = jsPsych.data
+        .get()
+        .filter({ phase: 'response' }) // I don't have phases here
+        .ignore(['stimulus', 'phase', 'plugin_version', 'question_order']) // trial type so I can see whatever
+        .csv()
+
+      return csv
+    }
+  };
+
+  timeline.push(save_data);
+
+
+  timeline.push({
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: `
           <div style="text-align:center; line-height:1.6;">
             <p>You're done! Thank you for participating.</p>
             <p>Your data has been automatically sent to OSF. You can visit your data at https://osf.io/2uznt/files</p>
-            <p class="dim">Press any key to finish.</p>
+            <p class="dim">Press space to finish.</p>
           </div>`,
-    })
+    // choices: "NO_KEYS",  
+  })
 
-    jsPsych.run(timeline);
-  </script>
+  jsPsych.run(timeline);
+</script>
+
 </html>
