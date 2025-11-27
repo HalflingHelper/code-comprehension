@@ -32,6 +32,7 @@ Note that I modified the inputs to the programs to ensure that outputs were posi
 Programs that I decided not to use for the sake of keeping the experiment at a reasonable length for people. Some of these can be found in the `programs/not_used` directory.
 - `max_min` - too similar to nostate
 - multFirst / sumFirst - Conditional in loop was too different from the other programs in the `single` category
+- `single` - Just too much
 - countEqual
 - countBetween
 - length

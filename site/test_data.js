@@ -59,24 +59,4 @@ const tv_rows = [
 	['ls = [4, 8, 1, 0, 6, 9, 9, 5, 8, 7]\na = 0\ni = 0\n\nwhile i < len(ls):\n  if ls[i] % 2 == 1:\n    a = a + 1\n  i = i + 1\n\nprint(a)', '5', 10, 'countOdd', 'nostate'],
 	['ls = [6, 8, 4, 2, 2, 0, 0, 6, 5, 8, 0, 1, 8, 8, 3, 6, 9, 7, 0, 7]\na = 0\ni = 0\n\nwhile i < len(ls):\n  if ls[i] % 2 == 1:\n    a = a + 1\n  i = i + 1\n\nprint(a)', '6', 20, 'countOdd', 'nostate'],
 
-	['ls = [3]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = a * b\n  \n  i = i + 1\n\nprint(c)', '0', 1, 'multLast', 'single'],
-	['ls = [6, 9, 2, 4, 7]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = a * b\n  \n  i = i + 1\n\nprint(c)', '28', 5, 'multLast', 'single'],
-	['ls = [4, 5, 1, 1, 0, 5, 8, 4, 1, 4]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = a * b\n  \n  i = i + 1\n\nprint(c)', '4', 10, 'multLast', 'single'],
-	['ls = [6, 2, 6, 8, 7, 5, 0, 4, 8, 0, 4, 0, 3, 6, 3, 9, 1, 3, 8, 9]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = a * b\n  \n  i = i + 1\n\nprint(c)', '72', 20, 'multLast', 'single'],
-
-	['ls = [2]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = a - b\n  \n  i = i + 1\n\nprint(c)', '2', 1, 'subLast', 'single'],
-	['ls = [9, 4, 2, 0, 3]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = a - b\n  \n  i = i + 1\n\nprint(c)', '3', 5, 'subLast', 'single'],
-	['ls = [4, 9, 0, 4, 0, 1, 9, 0, 0, 6]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = a - b\n  \n  i = i + 1\n\nprint(c)', '6', 10, 'subLast', 'single'],
-	['ls = [1, 0, 9, 4, 5, 2, 1, 7, 0, 6, 4, 0, 5, 0, 4, 6, 4, 9, 1, 5]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = a - b\n  \n  i = i + 1\n\nprint(c)', '4', 20, 'subLast', 'single'],
-
-	['ls = [0]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = b - a\n  \n  i = i + 1\n\nprint(c)', '0', 1, 'subLastRev', 'single'],
-	['ls = [3, 1, 0, 9, 6]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = b - a\n  \n  i = i + 1\n\nprint(c)', '3', 5, 'subLastRev', 'single'],
-	['ls = [5, 0, 8, 8, 9, 9, 8, 8, 3, 2]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = b - a\n  \n  i = i + 1\n\nprint(c)', '1', 10, 'subLastRev', 'single'],
-	['ls = [2, 5, 4, 6, 5, 5, 0, 9, 3, 3, 0, 6, 5, 0, 2, 5, 3, 4, 1, 0]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = b - a\n  \n  i = i + 1\n\nprint(c)', '1', 20, 'subLastRev', 'single'],
-
-	['ls = [7]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = a + b\n  \n  i = i + 1\n\nprint(c)', '7', 1, 'sumLast', 'single'],
-	['ls = [3, 1, 2, 8, 4]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = a + b\n  \n  i = i + 1\n\nprint(c)', '12', 5, 'sumLast', 'single'],
-	['ls = [6, 8, 6, 3, 6, 3, 2, 3, 1, 9]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = a + b\n  \n  i = i + 1\n\nprint(c)', '10', 10, 'sumLast', 'single'],
-	['ls = [2, 7, 3, 4, 5, 4, 1, 5, 6, 9, 5, 4, 7, 5, 0, 2, 3, 7, 8, 6]\na = 0\nb = 0\nc = 0\ni = 0\n\nwhile i < len(ls):\n  b = a\n  a = ls[i]\n  c = a + b\n  \n  i = i + 1\n\nprint(c)', '14', 20, 'sumLast', 'single'],
-
 ];
