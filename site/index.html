@@ -116,6 +116,7 @@
       }
   }
 
+  let numBlocks = 3;
 
   function makeBlockProcedure(blockIndex) {
     const mapping = [
@@ -163,7 +164,7 @@
 
         return `
             <div class="block-summary center">
-              <h3>Block ${blockIndex + 1} / 4 complete</h3>
+              <h3>Block ${blockIndex + 1} / ${numBlocks} complete</h3>
               <p class="dim">Press space to continue.</p>
             </div>`;
       },
@@ -171,7 +172,7 @@
     };
   }
 
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < numBlocks; i++) {
     timeline.push(makeBlockProcedure(i))
 
     timeline.push(makeBlockFeedback(i))
