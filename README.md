@@ -23,7 +23,6 @@ Note that I modified the inputs to the programs to ensure that outputs were posi
 
 
 ## Programs
-- `single` - Programs where the list doesn't need to be iterated to calculate, the result depends only on a few elements
 - `count_state` - Counting occurences of certain groupings of elements
 - `nostate` - Simpler counting exercises than count state
 - `hard` -  Similar to count_state, but the state depends on all previous elements in the list rather than merely the exactly previous one
@@ -32,7 +31,7 @@ Note that I modified the inputs to the programs to ensure that outputs were posi
 Programs that I decided not to use for the sake of keeping the experiment at a reasonable length for people. Some of these can be found in the `programs/not_used` directory.
 - `max_min` - too similar to nostate
 - multFirst / sumFirst - Conditional in loop was too different from the other programs in the `single` category
-- `single` - Just too much
+- `single` - Programs where the list doesn't need to be iterated to calculate, the result depends only on a few elements - including these just made the trials too long
 - countEqual
 - countBetween
 - length

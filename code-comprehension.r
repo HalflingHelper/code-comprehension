@@ -19,11 +19,13 @@ file_list <- list.files(path="/home/calvin/Documents/CogSci/code-comprehension/d
 data <- do.call(rbind, lapply(file_list, load_file))
 
 head(data) # see what all of the variables are called, and see what beginning of data looks like
-table(data$pid) # make sure that everybody did the same number of trials.  They didn't.  We'll get rid of them in a bit
-length(unique(data$pid))
 
 # Throw out data for block 4, and one of the types
+data <- filter(data, block != 3)
+data <- filter(data, code_type != 'single')
 
+table(data$pid) # make sure that everybody did the same number of trials.  They didn't.  We'll get rid of them in a bit
+length(unique(data$pid))
 
 # Survey responses
 resp <- filter(data, trial_type == "survey-multi-choice")
@@ -38,9 +40,32 @@ subjectSummary <- summarize(byseveral, count=n(), accuracy=sum(correct=='true')/
 
 plot(subjectSummary$len, subjectSummary$rt)
 
-responseTimes<-filter(trials, correct=="true" ) # don't include incorrect trials for response time analysis
+# First analize percent correct as the indep variable
+byseveral <- group_by(trials, pid, code_type, block, len)
+pcaverages<-summarize(byseveral,percentCorrect=sum(correct=="true")/n(), avgRt=mean(rt)) #gives average accuracy broken down by block and stimulus type. % correct = count of correct trials divided by total number of trials n()
+
+## Here an ANOVA shows main effects of code_type, len, interaction of code_type and block, and 3 way
+ezANOVA(data=pcaverages, dv=percentCorrect, within=c(code_type, block, len), wid=pid)
+ggplot(pcaverages, aes(x=block, y=percentCorrect, color=code_type))+
+  stat_summary(fun=mean, geom="line")
+
+### nostate - the intentionally easiest problems, were the most correct
+### Only accuracy on hard problems improves in later blocks
+### Interestingly the count_state programs were the hardest to learn??
+
+# Let's see if rt and percent correct seem related - hard to tell from this high level
+byseveral <- group_by(data, pid, code_type)
+subjectSummary <- summarize(byseveral,percentCorrect=sum(correct=="true")/n(), avgRt=mean(rt))
+plot(subjectSummary$percentCorrect, subjectSummary$avgRt)
+
+
+# Next, the response time as the dependent variable
+responseTimes<-filter(trials, correct=="true") # don't include incorrect trials for response time analysis
 hist(responseTimes$rt,breaks=2000,xlab="RT",ylab="Frequency") # get an overall feel for the RT distribution
 
+
+
+#TODO: Stuff below here maybe reusable
 
 # Pretty clear learning / warmup effect
 #For looking at whether and how percent correct is influenced by word type and block
@@ -53,8 +78,23 @@ table1 # show means so that one can begin to interpret the data
 
 ggplot(pcaverages,aes(x=block,y=percentCorrect,fill=code_type,color=code_type))+ stat_summary(fun=mean,geom="bar",position=position_dodge(width=0.9))+stat_summary(fun.data=mean_cl_normal,geom="errorbar",position=position_dodge(0.9))+coord_cartesian(ylim=c(0.7,1))+ xlab("Block") + ylab("Probability Correct") +guides(fill=guide_legend("Kind of Context")) + guides(color="none")
 
-ezANOVA(data=trials, dv=rt, within=c(program_name, block), wid=pid)
-ggplot(trials, aes(x=block, y=rt,fill=program_name, color=program_name))+stat_summary(fun=mean, geom="bar",position=position_dodge(width=0.9))
+
+# Resonse times for correct answers - Code type matters
+ezANOVA(data=responseTimes, dv=rt, within=c(code_type, block), wid=pid)
+ggplot(responseTimes, aes(x=block, y=rt,fill=code_type, color=code_type))+stat_summary(fun=mean, geom="bar",position=position_dodge(width=0.9))+stat_summary(fun.data=mean_cl_normal,geom="errorbar",position=position_dodge(0.9))
+
+
+# Does length matter across blocks - yes! Longer programs are harder
+ezANOVA(data=responseTimes, dv=rt, within=c(len, block), wid=pid)
+ggplot(responseTimes, aes(x=block, y=rt,fill=as.factor(len), color=as.factor(len)))+stat_summary(fun=mean, geom="bar",position=position_dodge(width=0.9)) #+stat_summary(fun.data=mean_cl_normal,geom="errorbar",position=position_dodge(0.9))
+
+# Looking at length for different code types
+# The graph says that no-state has much less slope than the hard and count-state programs
+# This makes intuitive sense to me
+ezANOVA(data=responseTimes, dv=rt, within=c(len, code_type), wid=pid)
+ggplot(responseTimes, aes(x=as.factor(len), y=rt,fill=code_type, color=code_type))+stat_summary(fun=mean, geom="bar",position=position_dodge(width=.9))#+stat_summary(fun.data=mean_cl_normal,geom="errorbar",position=position_dodge(0.9))
+
+
 
 # 
 pcaverages<-summarize(byseveral,percentCorrect=sum(correct=="true")/n()) #gives average accuracy broken down by block and stimulus type. % correct = count of correct trials divided by total number of trials n()

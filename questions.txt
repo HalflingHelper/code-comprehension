@@ -1,0 +1,14 @@
+Here are things I need to answer / sections in my data review paper
+
+Independent Variables: code_type >= program name, len, block
+Dependent Variables: rt, correct
+
+
+- [] Effect of code_type / length on response time
+  - Apparently no statistically-significant interaction
+
+- [x] Effect of code_type / length on percent correct
+
+- [] Learning effects
+  - [] Effect of block on response time & correctness
+    - Interaction effects with length and program type
