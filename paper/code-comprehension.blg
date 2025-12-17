@@ -1,0 +1,23 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[1] Config.pm:310> INFO - Logfile is 'code-comprehension.blg'
+[161] biber:340> INFO - === Tue Dec 16, 2025, 21:49:31
+[188] Biber.pm:419> INFO - Reading 'code-comprehension.bcf'
+[332] Biber.pm:979> INFO - Found 6 citekeys in bib section 0
+[370] Biber.pm:4419> INFO - Processing section 0
+[394] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[397] bibtex.pm:1713> INFO - LaTeX decoding ...
+[411] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[625] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[625] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[626] Biber.pm:4239> INFO - Sorting list 'nyt/apasortcite//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[626] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[671] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[672] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[672] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[672] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[708] bbl.pm:660> INFO - Writing 'code-comprehension.bbl' with encoding 'UTF-8'
+[725] bbl.pm:763> INFO - Output to code-comprehension.bbl
+[725] Biber.pm:131> WARN - legacy month field 'Dec' in entry 'heinonen_lehtelä_hellas_fagerholm_2023' is not an integer - this will probably not sort properly.
+[725] Biber.pm:131> WARN - legacy month field 'Sep' in entry 'soloway_ehrlich_1984' is not an integer - this will probably not sort properly.
+[726] Biber.pm:131> WARN - legacy month field 'Apr' in entry 'hansen_goldstone_lumsdaine_2013' is not an integer - this will probably not sort properly.
+[726] Biber.pm:133> INFO - WARNINGS: 3

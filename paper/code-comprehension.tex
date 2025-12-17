@@ -21,9 +21,10 @@
 
 
 % "draftfirst" or "draftall" as option to watermark, 10pt/11pt/12pt for font size, noextraspace if there are spacing issues, "man" for regular papers (assignments, journal submissions), jou for journal-esque formatting.
-\documentclass[man, 12pt]{apa7}
+\documentclass[man, 12pt, floatsintext]{apa7}
 
 \usepackage[american]{babel}
+\usepackage{amsmath}
 \usepackage{csquotes}
 \usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
 
@@ -52,14 +53,28 @@ final=1]
 %\usepackage[l2tabu]{nag}
 
 % title, etc.
-\title{Code Comprehension and Recognition of Loops}
+\title{Understanding Loop Iteration Effects on Program Comprehension}
 \shorttitle{Code Comprehension of Loops}
 \author{Calvin Josenhans}
 
 % The following four fields make up some of the front matter of your document. If working on an assignment for a course, I typically use "affiliation" for the class name. I have commented out abstract since minimal usage doesn't require it and leaving it blank will generate a blank page. Ignore the warning about the lack of abstract. 
 
 \authorsaffiliations{Indiana University}
-\abstract{TODO: Abstract}
+\abstract{Understanding how programmers comprehend code is important 
+for improving software development efficiency and reducing cognitive load. 
+In this study, we investigate how the number of loop iterations in a program 
+affects code comprehension. 
+We present a web-based experiment in which six experienced Python programmers were 
+asked to predict the output of short programs involving iteration over lists. 
+All programs were under 15 lines long and shared identical cyclomatic complexity, 
+but varied in list length and in the use of additional state within the loop. 
+Results show that increasing list length led to longer response times and lower accuracy, 
+indicating a growing cost of mental simulation as the number of iterations increases. 
+Programs requiring additional state tracking further reduced performance, 
+suggesting increased working memory demands. 
+We also observed significant learning effects across experimental blocks, 
+with faster responses over time but no corresponding improvement in accuracy, 
+due to increased speed of recognition of the program. }
 \keywords{Code Comprehension, Cognitive Science}
 %\authornote{}
 
@@ -69,42 +84,239 @@ final=1]
 % \section{Introduction}
 % No introduction heading in APA!
 
-% Bottom-down
-% Top-up
+% What am I writing about
+The development of computer programs is a significant and cognitively complex
+undertaking. Programmers use various control-flow constructs, such as loops and conditionals, 
+as well as data structures such as lists and trees to write programs that cover a broad range of 
+disciplines and use cases. 
+
+% Why is it important
+Software development consists both of writing code, and of understanding the code that others have written.
+It is not uncommon for many people to be working on the same parts of a code base and finding themselves
+needing to comprehend code in order to make their own additions to it. Understanding this code comprehension
+process and the factors that make it difficult allows for identification of areas where improvements
+can be made to ease the cognitive load of comprehension, thus saving both time and money.
+
+% What do I want the reader to know about it
+We present a web-based experiment in which participants were asked to predict the output of several
+short programs featuring iteration over lists. The programs were all under 15 lines long and had the
+same cyclomatic complexity (\cite{mccabe_cyclo_1976}), however they differed in the number
+of iterations of the loop that the subject had to simulate. We designed these programs
+to answer the question of how the number of loop iterations affects code comprehension, and
+to what extent that effect is dependent on additional factors of the program structure.
+
+
+\subsection{Related Work}
+% I don't need subsections within this, do I?
+
+Research into programmers' mental models has resulted in the development
+of various theories as to how programmers develop a mental model of a program
+upon first observation, in order to be able to understand, debug, and modify it.
+The bottom-up perspective posits that understanding starts with combining syntactic elements
+of source code into higher and higher levels of abstraction of understanding. However other theories
+propose that programmers have schema present for common program patterns and constructs, and
+the activation of these informs the programer's model of the program (\cite{heinonen_lehtelä_hellas_fagerholm_2023}).
+
 % Complexity studies and models
+Studies have shown that there are so-called "rules of discourse" (\cite{soloway_ehrlich_1984}) 
+that describe conventions that programming experts have that effect their understanding of programs.
+Some of these are relevant for loop comprehension, such as the expectation that a looping 
+construct such as \texttt{while} will only be used in cases where the body should be executed more than
+once.
+Research has also shown that in some cases expertise makes programmers more susceptible to 
+certain kinds of errors where they have not been trained (\cite{hansen_goldstone_lumsdaine_2013}),
+and that whitespace is relevant for judging whether statements are judged as being chunked together 
+as part of the same loop body.
 
 % We're curious about this loop thing
-
+Research has also been devoted to understanding code complexity metrics, and how well
+they correspond to or predict human comprehension. Models of mental simulation process
+are developed, based on human subject performance at simulating containing loops with a limited number
+of iterations (\cite{nakamura_monden_itoh_matsumoto_kanzaki_satoh_2003}), where in this case the goal was
+to avoid effects of "loop induction" by the participants. This found a significant mental cost
+incurred by non-constant variables.
+An fMRI study comparing various code complexity metrics
+measured subject brain activity while they simulated a program, some of which
+contained loops (\cite{peitek_apel_parnin_brechmann_siegmund_2021}). 
+Here similarly program vocabulary size was seen to burden working memory.
 
 
 \section{Method}
 \subsection{Subjects}
-% n subjects, from IU, + some anonymous respondents from reddit
+The participants in this study were six students at Indiana university, all of whom
+self reported as having at least three years of experience with the Python programming language.
+Additionally, all self-described as being either advanced or intermediate Python programmers,
+with three falling into each category.
 
 \subsection{Apparatus}
-% Computer program using the jsPsych library
-% Trials run on their own computers
+The studied was executed through the use of an online experiment created with 
+the jsPsych framework\footnote{https://www.jspsych.org/latest/}. Participants completed 
+the experiment on their own computers at a time of their own discretion.
 
 \subsection{Design}
-% Dependent and Independent Variables
-% Link to github repo
-% The cyclomatic complexity of all of our progs. is the same
+Two independent variables were manipulated within each subject.
+\textbf{List length} was either 1, 5, 10, or 20, and describes the length of list 
+in the code sample that was being iterated over.
+\textbf{Program type} describes the type of task being carried out by the iteration in the program.
+Three categories of programs were determined: \texttt{nostate} programs consisted counting of occurrences of 
+simple arithmetic properties in a list; \texttt{count\_state} programs used an additional variable
+to count certain pairings of numbers in a list, such as a number occuring twice in a row.
+\texttt{hard} programs used both an additional state variable, and used the variable of 
+loop operation for comparisons within the loop. All programs shared the same
+cyclomatic complexity.
+All code fragments used in the experiment can be found in our GitHub repository. \footnote{https://github.com/HalflingHelper/code-comprehension}
+
+For each trial, the dependent variables measured were the response time, and whether or not
+the given response was correct.
 
 \subsection{Procedure}
-% Blocks construction from program types
-
+Three blocks of conditions were created by combining base programs with
+randomly generated lists of a particular length. Within each block no programs
+were repeated, but each program occurred once per block, and would appear
+in a random order. The program was presented on the screen with instructions to 
+predict its output, which the subject could type in a text box,
+and submit their final response. One second of wait time was
+given between each program, and subjects could pause for as long as they
+wanted between each of the three blocks.
+% TODO: I don't know if there is much more to elaborate.
 
 
 \section{Results}
-% Response time
-% Percent Correct
-% Learning effects
+Data analysis was performed in R. Any regressions were done with the built in 
+\texttt{lm} function, and ANOVAs were performed with the \texttt{ez} package's
+\texttt{ezANOVA} function.
+
+\subsection{Accuracy}
+%                Effect DFn DFd           F           p p<.05         ges
+% 1           code_type   2  10  7.50000000 0.010240000     * 0.230986385
+% 2               block   1   5  0.04424779 0.841696703       0.001561968
+% 3                 len   1   5 37.80021686 0.001654732     * 0.365470992
+% 4     code_type:block   2  10  4.19354839 0.047581069     * 0.139932059
+% 5       code_type:len   2  10  2.79608837 0.108509123       0.113120286
+% 6           block:len   1   5  0.14423077 0.719706949       0.001113982
+% 7 code_type:block:len   2  10 14.46004320 0.001119776     * 0.199283136
+
+
+%          Effect DFn DFd         F           p p<.05       ges
+% 1     code_type   2  10  7.500000 0.010240000     * 0.3731814
+% 2           len   1   5 37.800217 0.001654732     * 0.5330670
+% 3 code_type:len   2  10  2.796088 0.108509123       0.2017971
+
+Subject accuracy was measured as the percentage of correct responses to the programming problems.
+Out of 216 total problems answered by our subjects, 66 of them, or 30.6\%, were given as incorrect answers.
+We note, however, that 77.3\% of these were so-called "off-by-one" errors, as seen in figure \ref{fig:error_dist}.
+
+\begin{figure}
+    \centering
+    \begin{minipage}{.45\textwidth}
+           \caption{Distribution of errors}
+    \includegraphics[width=2.5in]{images/error\_dist.png}
+    % \figurenote{This is a great figure.}
+    \label{fig:error_dist}
+    \end{minipage}%
+    \begin{minipage}{.45\textwidth}
+        % I don't like this but whatever
+    \caption{Accuracy effects}
+    \includegraphics[width=2.5in]{images/accuracy\_by\_type.png}
+    % \figurenote{This is a great figure.}
+    \label{fig:accuracy}
+    \end{minipage}
+    \label{fig:interactions}
+\end{figure}
+
+We found a main effect of both code type ($p = 0.01$) and list length ($p=0.002$) on accuracy.
+Accuracy decreased for code fragments with longer lists, and accuracy was lower for 
+the \texttt{count\_state} and \texttt{hard} program types.
+Though a statistically significant interaction between code type and list length was not found ($p=.11$), we do 
+see a greater difference between the programs for longer lists.
+
+
+
+\subsection{Response Time}
+For analysis of response times we only considered correct responses to the program prompts.
+
+% Main effects of code type and length within each block, no significant interaction
+We found main effects of program type ($p=0.045$) and list length ($\text{intercept}=16324, \text{coef}=1125, p<0.05$) 
+on response time. 
+The \texttt{nostate} programs had significantly quicker response times than either of the 
+other two program types, and as expected longer lists had longer response times, as there was more 
+data for the subjects to process.
+
+As with accuracy, we did not find a significant interaction between program type and list length ($p=0.42$).
+
+
+\begin{figure}
+    \centering
+    \begin{minipage}{.45\textwidth}
+          \caption{Program type and Response time}
+    \includegraphics[width=2.5in]{images/prog\_type\_rt.png}
+    % \figurenote{This is a great figure.}
+    \label{fig:prog_type_rt}
+    \end{minipage}%
+    \begin{minipage}{.45\textwidth}
+        % I don't like this but whatever
+ \caption{List length and Response time}
+    \includegraphics[width=2.5in]{images/code\_len\_rt.png}
+    % \figurenote{This is a great figure.}
+    \label{fig:code_len_rt}
+    \end{minipage}
+    % \label{fig:interactions}
+\end{figure}
+
+
+\subsection{Learning Effects}
+
+We found a significant effect of block index on reaction time
+($\text{intercept}=35802$, $\text{coef}=-10338$, $p<0.05$),
+% Didn't improve, just got faster
+indicating that subjects improved at the task over the course of the observation.
+However there was no correlation between block index on subject accuracy, so while
+speed increased, it did not necessarily result in improved performance.
+ 
+For regressions of response time on list length, 
+the intercepts stayed consistent across the three blocks, while the slope
+decreased.
+
+
+\begin{figure}
+    \caption{Slopes and Intercepts}
+    \includegraphics[width=2.5in]{images/fits.png}
+    % \figurenote{This is a great figure.}
+    \label{fig:fits}
+\end{figure}
+
 
 \section{Discussion}
-% What conclusions can we draw
-% Future Work
+Our results show that increasing the number of iterations in a program increases
+the time taken for mental simulation of the program, indicating that to at least some extent,
+the programmer is taking time to manually progress through loop iterations.
+
+We observed significant learning effects on the tasks, and see that improvements in response time are
+due to improved recognition of the particular program, rather than proceeding faster through each
+iteration of the loop. This indicates that the subjects are perhaps building schema of the particular
+programs we used here, even over the short course of the experiment.
+
+With regards to accuracy at the task, we see incidents of incorrect answer increase with list length,
+and no correlation between response time and accuracy. This suggests that mistakes are not a result
+of subjects spending more time on the code as a whole, but due to errors in the operations they are simulating,
+and even as that simulation speed increases, there is no corresponding improvement in accuracy. 
+The error rates were higher as well in programs with more variables being used,
+so as more working memory is occupied, errors are more likely to happen.
+
+We were unable to determine whether the relationship between list length and response time was a strictly
+linear one, or whether more complex behavior was at play, due to both limited participants, and a limited
+selection of list lengths observed.
 
 
+\subsection{Future Work}
+The results here show promise for probing deeper into how programmers understand loop execution.
+Further study might incorporate eye-tracking or fMRI measurements as other code comprehension
+investigations have to draw physiological grounding for our observations here. There
+is also a much greater variety of program structure available to probe, and perhaps
+loops in the context of larger programs are understood differently. Additionally, though
+subjects here were all fairly experienced programmers, investigation into whether the learning
+effects we observed remain present in novices would also offer insight into how programmers
+learn to adapt.
 
 % This is where the bibliography goes. Finish the body of your paper before this point, other than the appendix. 
 \printbibliography

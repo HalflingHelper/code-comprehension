@@ -1,0 +1,611 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/apasortcite//global/global}
+    \entry{hansen_goldstone_lumsdaine_2013}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3d48a2aa407a2c356c73521667cf75c6}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={Michael\bibnamedelima E},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e0dc18c849b9a7a35e2f9e0f7b2c5bc3}{%
+           family={Goldstone},
+           familyi={G\bibinitperiod},
+           given={Robert\bibnamedelima L},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=76782c3af2abd54f0f96f4565cbc818a}{%
+           family={Lumsdaine},
+           familyi={L\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cornell University}%
+      }
+      \strng{namehash}{bab0b6aece9b4b0c0bafa971666ec163}
+      \strng{fullhash}{a04e7cd2cbeff949c428ee5b68930b5d}
+      \strng{bibnamehash}{a04e7cd2cbeff949c428ee5b68930b5d}
+      \strng{authorbibnamehash}{a04e7cd2cbeff949c428ee5b68930b5d}
+      \strng{authornamehash}{bab0b6aece9b4b0c0bafa971666ec163}
+      \strng{authorfullhash}{a04e7cd2cbeff949c428ee5b68930b5d}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv (Cornell University)}
+      \field{month}{4}
+      \field{title}{What Makes Code Hard to Understand?}
+      \field{year}{2013}
+      \verb{doi}
+      \verb https://doi.org/10.48550/arxiv.1304.5257
+      \endverb
+    \endentry
+    \entry{heinonen_lehtelä_hellas_fagerholm_2023}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=9e19e757847fe4082d06cb21e0a1756f}{%
+           family={Heinonen},
+           familyi={H\bibinitperiod},
+           given={Ava},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=63e122b7bcec55ce4a5e0fb2e8fef792}{%
+           family={Lehtelä},
+           familyi={L\bibinitperiod},
+           given={Bettina},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b7a0a0969bb973d5e4e5945774c76c4}{%
+           family={Hellas},
+           familyi={H\bibinitperiod},
+           given={Arto},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5a1fa2a46da59556c5ad0057e3bd3d62}{%
+           family={Fagerholm},
+           familyi={F\bibinitperiod},
+           given={Fabian},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{23f784711952fe1d688da25a55b75fdf}
+      \strng{fullhash}{494d496bc330ac1f51581a0b5db9470d}
+      \strng{bibnamehash}{494d496bc330ac1f51581a0b5db9470d}
+      \strng{authorbibnamehash}{494d496bc330ac1f51581a0b5db9470d}
+      \strng{authornamehash}{23f784711952fe1d688da25a55b75fdf}
+      \strng{authorfullhash}{494d496bc330ac1f51581a0b5db9470d}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information and Software Technology}
+      \field{month}{12}
+      \field{title}{Synthesizing research on programmers’ mental models of programs, tasks and concepts — A systematic literature review}
+      \field{volume}{164}
+      \field{year}{2023}
+      \field{pages}{107300}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.infsof.2023.107300
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0950584923001544
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0950584923001544
+      \endverb
+    \endentry
+    \entry{mccabe_cyclo_1976}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=000ea00a0113798d167ac8dfa03fe388}{%
+           family={McCabe},
+           familyi={M\bibinitperiod},
+           given={T.J.},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{000ea00a0113798d167ac8dfa03fe388}
+      \strng{fullhash}{000ea00a0113798d167ac8dfa03fe388}
+      \strng{bibnamehash}{000ea00a0113798d167ac8dfa03fe388}
+      \strng{authorbibnamehash}{000ea00a0113798d167ac8dfa03fe388}
+      \strng{authornamehash}{000ea00a0113798d167ac8dfa03fe388}
+      \strng{authorfullhash}{000ea00a0113798d167ac8dfa03fe388}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Software Engineering}
+      \field{number}{4}
+      \field{title}{A Complexity Measure}
+      \field{volume}{SE-2}
+      \field{year}{1976}
+      \field{pages}{308\bibrangedash 320}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1109/TSE.1976.233837
+      \endverb
+      \keyw{Software testing;System testing;Graph theory;Fluid flow measurement;Software measurement;Linear programming;Software engineering;Software systems;Software maintenance;National security;Basis;complexity measure;control flow;decomposition;graph theory;independence;linear;modularization;programming;reduction;software;testing}
+    \endentry
+    \entry{nakamura_monden_itoh_matsumoto_kanzaki_satoh_2003}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=4d68c7e5de5bfdc3bd935eba84c3ae82}{%
+           family={Nakamura},
+           familyi={N\bibinitperiod},
+           given={Masahide},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ad4a706b1902aa889f626f22b6038f11}{%
+           family={Monden},
+           familyi={M\bibinitperiod},
+           given={Akito},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=879ef7a83a17040ef8a433a7ad508610}{%
+           family={Itoh},
+           familyi={I\bibinitperiod},
+           given={Tomoaki},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eef6c093e80d03fbbd837b0cef32697d}{%
+           family={Matsumoto},
+           familyi={M\bibinitperiod},
+           given={Ken-ichi},
+           giveni={K\bibinithyphendelim i\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0a96508d53b672b8d65b2820730fa13}{%
+           family={Kanzaki},
+           familyi={K\bibinitperiod},
+           given={Yuichiro},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e9b95c73bd0f72356e4cce23fc2d8121}{%
+           family={Satoh},
+           familyi={S\bibinitperiod},
+           given={Hirotsugu},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1f07f03a16073908439173ce0a786742}
+      \strng{fullhash}{ffd6a9c1aabc758bdb66818d6040c2a0}
+      \strng{bibnamehash}{ffd6a9c1aabc758bdb66818d6040c2a0}
+      \strng{authorbibnamehash}{ffd6a9c1aabc758bdb66818d6040c2a0}
+      \strng{authornamehash}{1f07f03a16073908439173ce0a786742}
+      \strng{authorfullhash}{ffd6a9c1aabc758bdb66818d6040c2a0}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Ninth International Software Metrics Symposium (METRICS’03)}
+      \field{title}{Queue-based Cost Evaluation of Mental Simulation Process in Program Comprehension}
+      \field{year}{2003}
+      \field{pages}{351\bibrangedash 360}
+      \range{pages}{10}
+      \verb{doi}
+      \verb https://doi.org/10.1109/METRIC.2003.1232480
+      \endverb
+    \endentry
+    \entry{peitek_apel_parnin_brechmann_siegmund_2021}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=f8de540c5bc9059c0d8b0ac0131ba565}{%
+           family={Peitek},
+           familyi={P\bibinitperiod},
+           given={Norman},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a4f57072771b98df56b8f8205f384d00}{%
+           family={Apel},
+           familyi={A\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=610131250a5512f8e83855dc5b5f6e6e}{%
+           family={Parnin},
+           familyi={P\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8436428c244110f6add7dc0014578727}{%
+           family={Brechmann},
+           familyi={B\bibinitperiod},
+           given={André},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e826eecd9365b9cccfbd52b6a4e031c0}{%
+           family={Siegmund},
+           familyi={S\bibinitperiod},
+           given={Janet},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{69e12cc63de6dfe54b9418b454661e5f}
+      \strng{fullhash}{82e564aa0f8f0a4b8d7abee6ab4256b2}
+      \strng{bibnamehash}{82e564aa0f8f0a4b8d7abee6ab4256b2}
+      \strng{authorbibnamehash}{82e564aa0f8f0a4b8d7abee6ab4256b2}
+      \strng{authornamehash}{69e12cc63de6dfe54b9418b454661e5f}
+      \strng{authorfullhash}{82e564aa0f8f0a4b8d7abee6ab4256b2}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{2021 IEEE/ACM 43rd International Conference on Software Engineering (ICSE)}
+      \field{title}{Program comprehension and code complexity metrics: An fMRI study}
+      \field{year}{2021}
+      \field{pages}{524\bibrangedash 536}
+      \range{pages}{13}
+      \verb{doi}
+      \verb https://doi.org/10.1109/ICSE43902.2021.00056
+      \endverb
+    \endentry
+    \entry{soloway_ehrlich_1984}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=0aa16d73b569a137384d1100589e5f7b}{%
+           family={Soloway},
+           familyi={S\bibinitperiod},
+           given={Elliot},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3e7ec3858b87611863f9ed373dd00004}{%
+           family={Ehrlich},
+           familyi={E\bibinitperiod},
+           given={Kate},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{67154c18bda3309649344ca7cd6d87a5}
+      \strng{fullhash}{67154c18bda3309649344ca7cd6d87a5}
+      \strng{bibnamehash}{67154c18bda3309649344ca7cd6d87a5}
+      \strng{authorbibnamehash}{67154c18bda3309649344ca7cd6d87a5}
+      \strng{authornamehash}{67154c18bda3309649344ca7cd6d87a5}
+      \strng{authorfullhash}{67154c18bda3309649344ca7cd6d87a5}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Software Engineering}
+      \field{month}{9}
+      \field{number}{5}
+      \field{title}{Empirical Studies of Programming Knowledge}
+      \field{volume}{SE-10}
+      \field{year}{1984}
+      \field{pages}{595\bibrangedash 609}
+      \range{pages}{15}
+      \verb{doi}
+      \verb https://doi.org/10.1109/tse.1984.5010283
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{nyt/global//global/global}
+    \entry{hansen_goldstone_lumsdaine_2013}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3d48a2aa407a2c356c73521667cf75c6}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={Michael\bibnamedelima E},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e0dc18c849b9a7a35e2f9e0f7b2c5bc3}{%
+           family={Goldstone},
+           familyi={G\bibinitperiod},
+           given={Robert\bibnamedelima L},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=76782c3af2abd54f0f96f4565cbc818a}{%
+           family={Lumsdaine},
+           familyi={L\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cornell University}%
+      }
+      \strng{namehash}{bab0b6aece9b4b0c0bafa971666ec163}
+      \strng{fullhash}{a04e7cd2cbeff949c428ee5b68930b5d}
+      \strng{bibnamehash}{a04e7cd2cbeff949c428ee5b68930b5d}
+      \strng{authorbibnamehash}{a04e7cd2cbeff949c428ee5b68930b5d}
+      \strng{authornamehash}{bab0b6aece9b4b0c0bafa971666ec163}
+      \strng{authorfullhash}{a04e7cd2cbeff949c428ee5b68930b5d}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv (Cornell University)}
+      \field{month}{4}
+      \field{title}{What Makes Code Hard to Understand?}
+      \field{year}{2013}
+      \verb{doi}
+      \verb https://doi.org/10.48550/arxiv.1304.5257
+      \endverb
+    \endentry
+    \entry{heinonen_lehtelä_hellas_fagerholm_2023}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=9e19e757847fe4082d06cb21e0a1756f}{%
+           family={Heinonen},
+           familyi={H\bibinitperiod},
+           given={Ava},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=63e122b7bcec55ce4a5e0fb2e8fef792}{%
+           family={Lehtelä},
+           familyi={L\bibinitperiod},
+           given={Bettina},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b7a0a0969bb973d5e4e5945774c76c4}{%
+           family={Hellas},
+           familyi={H\bibinitperiod},
+           given={Arto},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5a1fa2a46da59556c5ad0057e3bd3d62}{%
+           family={Fagerholm},
+           familyi={F\bibinitperiod},
+           given={Fabian},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{23f784711952fe1d688da25a55b75fdf}
+      \strng{fullhash}{494d496bc330ac1f51581a0b5db9470d}
+      \strng{bibnamehash}{494d496bc330ac1f51581a0b5db9470d}
+      \strng{authorbibnamehash}{494d496bc330ac1f51581a0b5db9470d}
+      \strng{authornamehash}{23f784711952fe1d688da25a55b75fdf}
+      \strng{authorfullhash}{494d496bc330ac1f51581a0b5db9470d}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information and Software Technology}
+      \field{month}{12}
+      \field{title}{Synthesizing research on programmers’ mental models of programs, tasks and concepts — A systematic literature review}
+      \field{volume}{164}
+      \field{year}{2023}
+      \field{pages}{107300}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.infsof.2023.107300
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0950584923001544
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0950584923001544
+      \endverb
+    \endentry
+    \entry{mccabe_cyclo_1976}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=000ea00a0113798d167ac8dfa03fe388}{%
+           family={McCabe},
+           familyi={M\bibinitperiod},
+           given={T.J.},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{000ea00a0113798d167ac8dfa03fe388}
+      \strng{fullhash}{000ea00a0113798d167ac8dfa03fe388}
+      \strng{bibnamehash}{000ea00a0113798d167ac8dfa03fe388}
+      \strng{authorbibnamehash}{000ea00a0113798d167ac8dfa03fe388}
+      \strng{authornamehash}{000ea00a0113798d167ac8dfa03fe388}
+      \strng{authorfullhash}{000ea00a0113798d167ac8dfa03fe388}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Software Engineering}
+      \field{number}{4}
+      \field{title}{A Complexity Measure}
+      \field{volume}{SE-2}
+      \field{year}{1976}
+      \field{pages}{308\bibrangedash 320}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1109/TSE.1976.233837
+      \endverb
+      \keyw{Software testing;System testing;Graph theory;Fluid flow measurement;Software measurement;Linear programming;Software engineering;Software systems;Software maintenance;National security;Basis;complexity measure;control flow;decomposition;graph theory;independence;linear;modularization;programming;reduction;software;testing}
+    \endentry
+    \entry{nakamura_monden_itoh_matsumoto_kanzaki_satoh_2003}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=4d68c7e5de5bfdc3bd935eba84c3ae82}{%
+           family={Nakamura},
+           familyi={N\bibinitperiod},
+           given={Masahide},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ad4a706b1902aa889f626f22b6038f11}{%
+           family={Monden},
+           familyi={M\bibinitperiod},
+           given={Akito},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=879ef7a83a17040ef8a433a7ad508610}{%
+           family={Itoh},
+           familyi={I\bibinitperiod},
+           given={Tomoaki},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eef6c093e80d03fbbd837b0cef32697d}{%
+           family={Matsumoto},
+           familyi={M\bibinitperiod},
+           given={Ken-ichi},
+           giveni={K\bibinithyphendelim i\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0a96508d53b672b8d65b2820730fa13}{%
+           family={Kanzaki},
+           familyi={K\bibinitperiod},
+           given={Yuichiro},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e9b95c73bd0f72356e4cce23fc2d8121}{%
+           family={Satoh},
+           familyi={S\bibinitperiod},
+           given={Hirotsugu},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1f07f03a16073908439173ce0a786742}
+      \strng{fullhash}{ffd6a9c1aabc758bdb66818d6040c2a0}
+      \strng{bibnamehash}{ffd6a9c1aabc758bdb66818d6040c2a0}
+      \strng{authorbibnamehash}{ffd6a9c1aabc758bdb66818d6040c2a0}
+      \strng{authornamehash}{1f07f03a16073908439173ce0a786742}
+      \strng{authorfullhash}{ffd6a9c1aabc758bdb66818d6040c2a0}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Ninth International Software Metrics Symposium (METRICS’03)}
+      \field{title}{Queue-based Cost Evaluation of Mental Simulation Process in Program Comprehension}
+      \field{year}{2003}
+      \field{pages}{351\bibrangedash 360}
+      \range{pages}{10}
+      \verb{doi}
+      \verb https://doi.org/10.1109/METRIC.2003.1232480
+      \endverb
+    \endentry
+    \entry{peitek_apel_parnin_brechmann_siegmund_2021}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=f8de540c5bc9059c0d8b0ac0131ba565}{%
+           family={Peitek},
+           familyi={P\bibinitperiod},
+           given={Norman},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a4f57072771b98df56b8f8205f384d00}{%
+           family={Apel},
+           familyi={A\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=610131250a5512f8e83855dc5b5f6e6e}{%
+           family={Parnin},
+           familyi={P\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8436428c244110f6add7dc0014578727}{%
+           family={Brechmann},
+           familyi={B\bibinitperiod},
+           given={André},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e826eecd9365b9cccfbd52b6a4e031c0}{%
+           family={Siegmund},
+           familyi={S\bibinitperiod},
+           given={Janet},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{69e12cc63de6dfe54b9418b454661e5f}
+      \strng{fullhash}{82e564aa0f8f0a4b8d7abee6ab4256b2}
+      \strng{bibnamehash}{82e564aa0f8f0a4b8d7abee6ab4256b2}
+      \strng{authorbibnamehash}{82e564aa0f8f0a4b8d7abee6ab4256b2}
+      \strng{authornamehash}{69e12cc63de6dfe54b9418b454661e5f}
+      \strng{authorfullhash}{82e564aa0f8f0a4b8d7abee6ab4256b2}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{2021 IEEE/ACM 43rd International Conference on Software Engineering (ICSE)}
+      \field{title}{Program comprehension and code complexity metrics: An fMRI study}
+      \field{year}{2021}
+      \field{pages}{524\bibrangedash 536}
+      \range{pages}{13}
+      \verb{doi}
+      \verb https://doi.org/10.1109/ICSE43902.2021.00056
+      \endverb
+    \endentry
+    \entry{soloway_ehrlich_1984}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=0aa16d73b569a137384d1100589e5f7b}{%
+           family={Soloway},
+           familyi={S\bibinitperiod},
+           given={Elliot},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3e7ec3858b87611863f9ed373dd00004}{%
+           family={Ehrlich},
+           familyi={E\bibinitperiod},
+           given={Kate},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{67154c18bda3309649344ca7cd6d87a5}
+      \strng{fullhash}{67154c18bda3309649344ca7cd6d87a5}
+      \strng{bibnamehash}{67154c18bda3309649344ca7cd6d87a5}
+      \strng{authorbibnamehash}{67154c18bda3309649344ca7cd6d87a5}
+      \strng{authornamehash}{67154c18bda3309649344ca7cd6d87a5}
+      \strng{authorfullhash}{67154c18bda3309649344ca7cd6d87a5}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Software Engineering}
+      \field{month}{9}
+      \field{number}{5}
+      \field{title}{Empirical Studies of Programming Knowledge}
+      \field{volume}{SE-10}
+      \field{year}{1984}
+      \field{pages}{595\bibrangedash 609}
+      \range{pages}{15}
+      \verb{doi}
+      \verb https://doi.org/10.1109/tse.1984.5010283
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
